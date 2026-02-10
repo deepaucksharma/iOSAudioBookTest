@@ -1,0 +1,17 @@
+## Appendix
+
+This appendix provides the Master Protocol Table — a single-page reference that consolidates every practice, technique, and protocol described in the book into a structured decision-support tool. The table is organized by quadrant (Q1-Q4), phase (A-D), and clinical context, allowing the practitioner to quickly identify the appropriate intervention for their current state.
+
+Each row in the table includes the technique name, the chapter where it is fully described, the target quadrant or state transition, the minimum effective dose, contraindications, and the epistemic confidence grade. The table is designed to be printed, laminated, and kept near the practice space as a quick-reference card.
+
+---
+
+### Using the Table
+
+The table is not a substitute for reading the chapters. It assumes the reader has already developed a felt understanding of each technique through the detailed instruction and practice provided in the main text. Used without that background, it would be a list of procedures stripped of the context that makes them safe and effective.
+
+A note on personalization: the table provides general recommendations, but every nervous system is different. The reader is encouraged to annotate their own copy of the table based on personal experience — marking which techniques work best for them, adjusting timing parameters, and noting any idiosyncratic responses.
+
+### Final Note
+
+The book closes with a final note from the author, acknowledging the collaborative nature of the knowledge presented here — drawn from neuroscientists, contemplatives, clinicians, and the lived experience of countless practitioners. The map was never the work of one cartographer. May it serve you well on the territory ahead.

@@ -1,0 +1,15 @@
+## Chapter 20: The Instruments
+
+This chapter surveys the technological tools available for measuring and modulating the states described throughout the book. From consumer-grade heart rate variability monitors to research-grade EEG systems, the landscape of contemplative technology is expanding rapidly and the reader deserves an honest assessment of what works, what is promising, and what is marketing.
+
+Heart rate variability (HRV) biofeedback receives the strongest endorsement, as the evidence base for its effectiveness in training autonomic flexibility is relatively robust. The chapter explains how to interpret HRV metrics, which devices provide reliable measurements, and how to integrate biofeedback into the practice framework established in earlier chapters.
+
+---
+
+### Emerging and Speculative Tools
+
+Neurofeedback, transcranial electrical stimulation, and sensory deprivation (float tanks) are examined with calibrated enthusiasm. Each has genuine mechanistic plausibility and some supporting evidence, but none has yet achieved the level of replication that would warrant unconditional recommendation. The chapter assigns each tool an epistemic grade consistent with the system introduced in the front matter.
+
+Consumer meditation apps and guided audio programs are assessed pragmatically. The best of them provide accessible scaffolding for beginners; the worst gamify contemplative practice in ways that reinforce the very goal-oriented mindset the practices are meant to soften. Specific recommendations are offered with the caveat that the app landscape changes faster than any book can track.
+
+The chapter closes with a philosophical note: technology can support but never replace the fundamental act of paying attention. The most sophisticated EEG headband in the world cannot meditate for you. These are instruments in the musical sense — they must be played, and the playing requires a player who has done the interior work.

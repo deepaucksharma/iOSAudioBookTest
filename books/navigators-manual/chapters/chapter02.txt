@@ -1,0 +1,15 @@
+## Chapter 2: The Wave
+
+This chapter introduces the global cortical wave discovered by Raut et al. — a slow, infraslow oscillation that sweeps across the brain every few seconds, modulating arousal and network engagement in its wake. This wave is the physiological backbone of the arousal axis introduced in Chapter 1.
+
+The arousal orchestra metaphor is developed here: the wave is not a single signal but a coordination pattern, synchronizing heart rate, pupil diameter, skin conductance, and cortical excitability into a coherent rhythm. When the orchestra plays in time, you feel centered. When it fragments, you feel scattered or overwhelmed.
+
+---
+
+### The Minus-Seven-Second Lag
+
+A key finding explored in this chapter is the approximately seven-second lag between body-level arousal shifts and their cortical registration. This delay has profound practical implications: by the time you consciously notice a state change, the body initiated it seconds ago. Intervention at the body level is therefore upstream of awareness.
+
+This leads to the principle of body-brain bidirectionality. The brain does not simply command the body; the body continuously informs and shapes brain states. Breath, posture, and interoceptive signals flow upward just as commands flow downward.
+
+The chapter closes by connecting the wave to the practical protocols that follow: if arousal is a wave, then breathwork and somatic techniques are ways of surfing it rather than being tumbled by it.

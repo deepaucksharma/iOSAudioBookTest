@@ -49,7 +49,7 @@ function parseTxt(text) {
     let start = 0;
     if (lines.length > 0) {
         const first = lines[0].trim();
-        if (first.startsWith('## CHAPTER') || first.startsWith('## Chapter') || first.startsWith('Chapter ')) {
+        if (first.startsWith('## ') || first.startsWith('Chapter ')) {
             start = 1;
             while (start < lines.length && lines[start].trim() === '') start++;
         }

@@ -1,0 +1,15 @@
+## Chapter 13: The Hidden Tormenter
+
+This chapter performs a careful autopsy of Eckhart Tolle's "pain body" concept, translating it from spiritual metaphor into the language of predictive processing and affective neuroscience. The pain body — that recurring pattern of emotional reactivity that seems to have a life of its own — is reframed as a deeply entrenched set of prior beliefs that hijack the predictive machinery.
+
+This is the first half of the theoretical heart of the book. Where earlier chapters focused on state management (how to shift your arousal, how to redirect attention), this chapter asks why certain states keep recurring despite conscious intention to change. The answer lies in the structure of the brain's generative model — the web of predictions and prediction errors that constitute your lived experience.
+
+---
+
+### The Autopsy
+
+The chapter dissects the pain body into its component mechanisms: emotional memory consolidation in the amygdala, habitual narrative loops in the DMN, somatic markers stored in the insular cortex, and the self-reinforcing cycle by which attending to pain generates predictions of more pain. Each component is real, measurable, and — crucially — modifiable.
+
+The spiritual framing is treated with respect but subjected to empirical scrutiny. Tolle's observation that the pain body "feeds on" negative emotion is reinterpreted as a description of prediction confirmation bias: the system generates pain-predicting priors, selectively attends to confirming evidence, and thereby strengthens the very priors that generated the search. This is not mystical parasitism; it is Bayesian inference operating in a locally optimal but globally destructive pattern.
+
+The chapter does not yet offer the solution — that comes in Chapter 14 with the full predictive processing framework. Instead, it ensures the reader can recognize the pain body in their own experience with clear eyes: not as an enemy to be defeated but as a pattern to be understood.

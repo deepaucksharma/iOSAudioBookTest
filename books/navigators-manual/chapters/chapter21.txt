@@ -1,0 +1,15 @@
+## Chapter 21: Placebo, Expectation, and the Predictive Breath
+
+This chapter confronts the elephant in the room: how much of what this book describes is "real" physiological effect, and how much is placebo? The answer, grounded in predictive processing, dissolves the question. If the brain is a prediction machine, then expectation is not a confound to be controlled for — it is a mechanism to be understood and, judiciously, leveraged.
+
+The placebo literature is reviewed with care. Placebo effects are not imaginary; they involve measurable changes in neurotransmitter release, pain processing, immune function, and autonomic regulation. When a person expects a breathwork practice to produce calm, that expectation generates top-down predictions that genuinely shift physiological parameters. The calm is real, even if expectation contributed to it.
+
+---
+
+### The Predictive Breath
+
+The concept of the "predictive breath" synthesizes the book's two major theoretical threads — breathwork physiology and predictive processing. Every breath is both a bottom-up physiological event (gas exchange, vagal afference, autonomic modulation) and a top-down predictive event (the brain's model of what this breath means, what state it should produce, what comes next).
+
+This dual nature explains why context matters so much for breathwork efficacy. The same physiological sigh performed in a calm, intentional practice session and in the middle of a panic attack will have different effects, because the predictive context differs even though the biomechanics are identical. The chapter argues that optimizing the predictive context — through ritual, environment, and narrative framing — is not cheating; it is skillful use of the brain's own architecture.
+
+The chapter closes by reframing the entire book through this lens: The Navigator's Manual is not just a collection of techniques but a set of priors. Reading it has already changed the reader's generative model of their own nervous system, and that change in model is itself an intervention. The map alters the territory it maps.

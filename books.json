@@ -6,5 +6,21 @@
     "author": "",
     "description": "A guide to navigating your inner landscape through energy and presence.",
     "path": "books/inner-map"
+  },
+  {
+    "slug": "navigators-manual",
+    "title": "The Navigator's Manual",
+    "subtitle": "Engineering the Architecture of Awakening",
+    "author": "",
+    "description": "22 chapters mapping the neuroscience of presence — from physiological sighs to predictive processing.",
+    "path": "books/navigators-manual"
+  },
+  {
+    "slug": "living-practice",
+    "title": "The Living Practice",
+    "subtitle": "Presence in the Fabric of Daily Life",
+    "author": "",
+    "description": "20 chapters on embodying presence through relationships, work, grief, creativity, and the long arc of a life.",
+    "path": "books/living-practice"
   }
 ]

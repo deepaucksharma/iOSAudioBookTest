@@ -1,0 +1,138 @@
+{
+  "title": "The Living Practice",
+  "subtitle": "Presence in the Fabric of Daily Life",
+  "chapters": [
+    {
+      "id": 0,
+      "title": "Front Matter",
+      "subtitle": "Title Page, Epigraph, Author's Note & Before You Begin",
+      "file": "chapters/front-matter.txt"
+    },
+    {
+      "id": 1,
+      "title": "The Morning After Awakening",
+      "subtitle": "Chapter One",
+      "file": "chapters/chapter01.txt"
+    },
+    {
+      "id": 2,
+      "title": "The Second Arrow",
+      "subtitle": "Chapter Two",
+      "file": "chapters/chapter02.txt"
+    },
+    {
+      "id": 3,
+      "title": "The Weather and the Climate",
+      "subtitle": "Chapter Three",
+      "file": "chapters/chapter03.txt"
+    },
+    {
+      "id": 4,
+      "title": "Two Nervous Systems in a Room",
+      "subtitle": "Chapter Four",
+      "file": "chapters/chapter04.txt"
+    },
+    {
+      "id": 5,
+      "title": "The Listening Body",
+      "subtitle": "Chapter Five",
+      "file": "chapters/chapter05.txt"
+    },
+    {
+      "id": 6,
+      "title": "The Synchronized Escalation",
+      "subtitle": "Chapter Six",
+      "file": "chapters/chapter06.txt"
+    },
+    {
+      "id": 7,
+      "title": "Raising Nervous Systems",
+      "subtitle": "Chapter Seven",
+      "file": "chapters/chapter07.txt"
+    },
+    {
+      "id": 8,
+      "title": "The Office Loop",
+      "subtitle": "Chapter Eight",
+      "file": "chapters/chapter08.txt"
+    },
+    {
+      "id": 9,
+      "title": "The Blank Canvas",
+      "subtitle": "Chapter Nine",
+      "file": "chapters/chapter09.txt"
+    },
+    {
+      "id": 10,
+      "title": "The Body That Moves",
+      "subtitle": "Chapter Ten",
+      "file": "chapters/chapter10.txt"
+    },
+    {
+      "id": 11,
+      "title": "Scrolling the Loop",
+      "subtitle": "Chapter Eleven",
+      "file": "chapters/chapter11.txt"
+    },
+    {
+      "id": 12,
+      "title": "The Grief Map",
+      "subtitle": "Chapter Twelve",
+      "file": "chapters/chapter12.txt"
+    },
+    {
+      "id": 13,
+      "title": "The Hungry Ghost",
+      "subtitle": "Chapter Thirteen",
+      "file": "chapters/chapter13.txt"
+    },
+    {
+      "id": 14,
+      "title": "The Long Unraveling",
+      "subtitle": "Chapter Fourteen",
+      "file": "chapters/chapter14.txt"
+    },
+    {
+      "id": 15,
+      "title": "The Dark Night, Revisited",
+      "subtitle": "Chapter Fifteen",
+      "file": "chapters/chapter15.txt"
+    },
+    {
+      "id": 16,
+      "title": "The Entrained Room",
+      "subtitle": "Chapter Sixteen",
+      "file": "chapters/chapter16.txt"
+    },
+    {
+      "id": 17,
+      "title": "The Structural Body",
+      "subtitle": "Chapter Seventeen",
+      "file": "chapters/chapter17.txt"
+    },
+    {
+      "id": 18,
+      "title": "The Seasons of Practice",
+      "subtitle": "Chapter Eighteen",
+      "file": "chapters/chapter18.txt"
+    },
+    {
+      "id": 19,
+      "title": "The Aging Brain",
+      "subtitle": "Chapter Nineteen",
+      "file": "chapters/chapter19.txt"
+    },
+    {
+      "id": 20,
+      "title": "The Living Question",
+      "subtitle": "Chapter Twenty",
+      "file": "chapters/chapter20.txt"
+    },
+    {
+      "id": 21,
+      "title": "Appendix — Relational Protocol Table & Final Note",
+      "subtitle": "Appendix",
+      "file": "chapters/appendix.txt"
+    }
+  ]
+}

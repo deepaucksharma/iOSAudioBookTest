@@ -1,0 +1,15 @@
+## Chapter 9: The Watcher
+
+This chapter introduces metacognition — the capacity to observe one's own mental processes — and immediately corrects the most common misunderstanding of it. The Homunculus correction addresses the intuitive but incorrect model of a little person inside your head watching your thoughts on a screen. There is no watcher separate from the watching; metacognition is a mode of processing, not an entity.
+
+The chapter grounds this correction in predictive processing theory. The brain is fundamentally a prediction machine, generating models of the world and updating them when predictions fail. Metacognition, in this framework, is the system modeling its own modeling — turning the predictive machinery on itself. This is not mystical; it is a higher-order prediction about lower-order predictions.
+
+---
+
+### The Brewer Findings
+
+The work of Judson Brewer and colleagues is introduced here, particularly their neuroimaging studies showing that experienced meditators exhibit reduced default mode network activity during self-referential processing. Critically, this reduction is not the silencing of the DMN but a shift in its functional connectivity — less coupling with narrative self-circuits, more coupling with present-moment sensory networks.
+
+This finding connects back to the gradient model from Chapter 3: meditation does not destroy the interior of the cortical landscape but changes the traffic patterns across it. The watcher is not a new structure added to consciousness but a reconfiguration of existing dynamics.
+
+The chapter closes with a practical exercise: noting practice. The reader is guided to sit quietly and label mental events — "thinking," "hearing," "planning," "remembering" — without elaboration. This simple technique builds metacognitive muscle by repeatedly activating the observing mode without engaging the narrative mode.

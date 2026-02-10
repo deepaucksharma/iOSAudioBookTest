@@ -7,6 +7,10 @@ const S = window.speechSynthesis;
 let V = [], cCh = 0, cP = 0, playing = 0, sQ = [], sI = 0;
 const C = [];
 
+// === MULTI-BOOK STATE ===
+let books = [];      // Master catalog from books.json
+let cBook = null;    // Currently loaded book metadata
+
 // === CHAPTER TEXT FILE PARSER ===
 // Handles both plain-text format and Markdown-formatted chapter files:
 //   - Skips title lines: "Chapter N: ..." or "## CHAPTER N: ..."
@@ -94,24 +98,99 @@ function parseTxt(text) {
     return paragraphs;
 }
 
-// === LOAD CHAPTERS FROM JSON + TEXT FILES ===
-async function loadChapters() {
-    const res = await fetch('chapters.json');
+// === LOAD LIBRARY (master catalog) ===
+async function loadLibrary() {
+    const res = await fetch('books.json');
+    books = await res.json();
+    renderLibrary();
+}
+
+// === RENDER LIBRARY GRID ===
+function renderLibrary() {
+    const grid = document.getElementById('lib-grid');
+    grid.innerHTML = '';
+    books.forEach(book => {
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.onclick = () => openBook(book.slug);
+
+        // Generate initials for fallback cover
+        const initials = book.title.split(/\s+/).map(w => w[0]).filter(c => c && c === c.toUpperCase()).join('').substring(0, 3);
+
+        card.innerHTML =
+            '<div class="book-cover">' +
+                (book.cover ? '<img src="' + book.path + '/' + book.cover + '" alt="" onerror="this.style.display=\'none\'">' : '') +
+                '<div class="book-cover-fallback">' + initials + '</div>' +
+            '</div>' +
+            '<div class="book-info">' +
+                '<h3 class="book-title">' + book.title + '</h3>' +
+                '<div class="book-subtitle">' + book.subtitle + '</div>' +
+                (book.description ? '<div class="book-meta">' + book.description + '</div>' : '') +
+            '</div>';
+
+        grid.appendChild(card);
+    });
+}
+
+// === LOAD BOOK (chapters from book.json + text files) ===
+async function loadBook(slug) {
+    const book = books.find(b => b.slug === slug);
+    if (!book) return;
+
+    const bookPath = book.path;
+    const res = await fetch(bookPath + '/book.json');
     const manifest = await res.json();
 
-    for (const ch of manifest) {
-        let paragraphs = [];
-        try {
-            const r = await fetch(ch.file);
-            if (r.ok) {
-                const txt = await r.text();
-                paragraphs = parseTxt(txt);
-            }
-        } catch (e) {
-            // Chapter file not found or empty — that's OK
-        }
+    cBook = { slug: slug, title: manifest.title, subtitle: manifest.subtitle, path: bookPath };
+    C.length = 0; // Clear previous book's chapters
+
+    // Fetch all chapter text files in parallel for speed
+    const fetches = manifest.chapters.map(ch =>
+        fetch(bookPath + '/' + ch.file).then(r => r.ok ? r.text() : '').catch(() => '')
+    );
+    const texts = await Promise.all(fetches);
+
+    manifest.chapters.forEach((ch, i) => {
+        const paragraphs = texts[i] ? parseTxt(texts[i]) : [];
         C.push({ n: ch.id, t: ch.title, s: ch.subtitle, p: paragraphs });
-    }
+    });
+}
+
+// === OPEN BOOK (full flow) ===
+async function openBook(slug) {
+    stp();
+    await loadBook(slug);
+    rNav();
+    rCh(0);
+    updatePageMeta();
+    showPlayer();
+}
+
+// === VIEW SWITCHING ===
+function showLibrary() {
+    stp();
+    document.getElementById('player').style.display = 'none';
+    document.getElementById('lib').style.display = '';
+    document.title = 'Audiobook Library';
+    history.pushState({ view: 'library' }, '', window.location.pathname);
+}
+
+function showPlayer() {
+    document.getElementById('lib').style.display = 'none';
+    document.getElementById('player').style.display = '';
+}
+
+function getBookFromURL() {
+    return new URLSearchParams(window.location.search).get('book') || null;
+}
+
+function updatePageMeta() {
+    if (!cBook) return;
+    document.title = cBook.title + ' \u2014 Audiobook';
+    document.getElementById('book-title').textContent = cBook.title;
+    document.getElementById('book-subtitle').textContent = cBook.subtitle;
+    document.getElementById('ld-title').textContent = cBook.title;
+    history.pushState({ view: 'player', book: cBook.slug }, '', '?book=' + cBook.slug);
 }
 
 // === SENTENCE SPLITTING (iOS fix) ===
@@ -163,7 +242,7 @@ function rCh(i) {
     c.p.forEach((p, j) => {
         if (p === '§') {
             const d = document.createElement('div');
-            d.className = 'sb'; d.textContent = '• • •';
+            d.className = 'sb'; d.textContent = '\u2022 \u2022 \u2022';
             tx.appendChild(d);
         } else {
             const d = document.createElement('div');
@@ -179,6 +258,7 @@ function rCh(i) {
 
 function rNav() {
     const n = document.getElementById('nav');
+    n.innerHTML = ''; // Clear previous book's chapter buttons
     C.forEach((c, i) => {
         const b = document.createElement('button');
         b.className = 'cb'; b.textContent = c.n; b.title = c.t;
@@ -238,7 +318,7 @@ function spkP(i) {
         if (cCh < C.length - 1) {
             rCh(cCh + 1);
             setTimeout(() => { if (playing) spkP(fns(0)); }, 600);
-        } else { stp(); tst('Book complete'); }
+        } else { stp(); tst(cBook ? cBook.title + ' complete' : 'Book complete'); }
         return;
     }
     if (c.p[i] === '§') {
@@ -300,11 +380,33 @@ document.getElementById('ib').onclick = () => {
     tst('Audio ready');
 };
 
+// Library back button
+document.getElementById('lib-btn').onclick = () => { showLibrary(); };
+
+// Browser back/forward navigation
+window.onpopstate = (e) => {
+    const slug = getBookFromURL();
+    if (slug) {
+        openBook(slug);
+    } else {
+        stp();
+        document.getElementById('player').style.display = 'none';
+        document.getElementById('lib').style.display = '';
+        document.title = 'Audiobook Library';
+    }
+};
+
 // === INIT ===
 window.onload = async () => {
-    await loadChapters();
-    rNav();
-    rCh(0);
+    await loadLibrary();
+
+    const slug = getBookFromURL();
+    if (slug) {
+        await openBook(slug);
+    } else {
+        showLibrary();
+    }
+
     setTimeout(() => {
         document.getElementById('ld').classList.add('x');
         setTimeout(() => {

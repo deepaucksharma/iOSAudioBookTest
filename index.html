@@ -5,25 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="The Inner Map">
+<meta name="apple-mobile-web-app-title" content="Audiobook Library">
 <meta name="theme-color" content="#0f0e0c">
-<title>The Inner Map — Audiobook</title>
+<title>Audiobook Library</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="tt" id="toast"></div>
-<div class="ov ld" id="ld"><h2>The Inner Map</h2><div class="lr"><div></div></div><p>Preparing audiobook…</p></div>
+<div class="ov ld" id="ld"><h2 id="ld-title">Audiobook Library</h2><div class="lr"><div></div></div><p>Loading…</p></div>
 <div class="ov vi x" id="vi"><button id="ib">Begin Listening</button><p>Tap to initialize audio<br>Required by mobile browsers</p></div>
-<div class="app">
-<div class="hdr"><h1>The Inner Map</h1><div class="sub">Navigating the Architecture of Now</div></div>
+
+<!-- LIBRARY VIEW -->
+<div class="lib" id="lib" style="display:none">
+<div class="lib-hdr">
+<h1>Audiobook Library</h1>
+<div class="sub">Select a book to begin listening</div>
+</div>
+<div class="lib-grid" id="lib-grid"></div>
+</div>
+
+<!-- PLAYER VIEW -->
+<div class="app" id="player" style="display:none">
+<div class="hdr">
+<button class="lib-btn" id="lib-btn" title="Back to Library"><svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V7h10v8z"/></svg></button>
+<h1 id="book-title"></h1>
+<div class="sub" id="book-subtitle"></div>
+</div>
 <div class="mc">
 <div class="cn" id="nav"></div>
 <div><h2 class="ct" id="ct"></h2><div class="cs" id="cs"></div></div>
 <div class="tx" id="tx"></div>
 </div>
-<div class="pb"><div class="pi">
+<div class="pb" id="pb"><div class="pi">
 <div class="pc" id="pc"><div class="pr"><div class="pf" id="pf" style="width:0%"></div></div></div>
-<div class="td"><span id="cp">0 / 0</span><span id="chp">Ch 1 / 8</span></div>
+<div class="td"><span id="cp">0 / 0</span><span id="chp">Ch 1 / 1</span></div>
 <div class="cc">
 <button class="bt" id="pch"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
 <button class="bt" id="pp"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>

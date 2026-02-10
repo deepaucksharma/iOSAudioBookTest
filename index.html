@@ -8,64 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="The Inner Map">
 <meta name="theme-color" content="#0f0e0c">
 <title>The Inner Map — Audiobook</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0f0e0c;--sf:#1a1815;--sf2:#242019;
---g:#c4a265;--gd:#8a7244;
---t:#d4cfc5;--td:#7a7568;--tb:#efe9db;
---a:#e8c888;--h:rgba(196,162,101,0.08);--ha:rgba(196,162,101,0.15);
---sab:env(safe-area-inset-bottom,0px);
-}
-html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--t);font-family:'Cormorant Garamond',Georgia,serif;min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-.app{display:flex;flex-direction:column;min-height:100dvh}
-.hdr{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 70%,transparent 100%);padding:1.5rem 1.5rem 2rem;padding-top:max(1.5rem,env(safe-area-inset-top));text-align:center}
-.hdr h1{font-weight:300;font-size:1.3rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:.2rem}
-.hdr .sub{font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--td)}
-.mc{flex:1;max-width:700px;margin:0 auto;padding:0 1.5rem 14rem;width:100%}
-.cn{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
-.cb{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.06em;padding:.45rem .85rem;background:var(--sf);border:1px solid transparent;color:var(--td);border-radius:2rem;cursor:pointer;transition:all .3s;-webkit-appearance:none;touch-action:manipulation}
-.cb:active{border-color:var(--gd);color:var(--t)}.cb.on{background:var(--sf2);border-color:var(--g);color:var(--g)}
-.ct{font-weight:300;font-size:1.8rem;color:var(--tb);margin-bottom:.4rem;line-height:1.3}
-.cs{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd);margin-bottom:1.8rem}
-.tx{line-height:1.85;font-size:1.1rem;font-weight:300}
-.tx .p{margin-bottom:1.2rem;padding:.3rem .5rem;border-radius:4px;transition:background .3s,color .3s;cursor:pointer}
-.tx .p.sp{background:var(--ha);color:var(--tb)}.tx .p.dn{color:var(--td)}
-.tx .sb{text-align:center;color:var(--gd);margin:2rem 0;font-size:1.1rem;letter-spacing:.5em}
-.pb{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(180deg,transparent 0%,var(--bg) 12%,var(--sf) 100%);padding:1.8rem 1.5rem calc(1rem + var(--sab));z-index:200}
-.pi{max-width:600px;margin:0 auto}
-.pc{width:100%;margin-bottom:.8rem;cursor:pointer;padding:.5rem 0}
-.pr{width:100%;height:3px;background:var(--sf2);border-radius:2px;overflow:visible}
-.pf{height:100%;background:linear-gradient(90deg,var(--gd),var(--g));border-radius:2px;transition:width .3s;position:relative}
-.pf::after{content:'';position:absolute;right:-5px;top:-5px;width:13px;height:13px;background:var(--g);border-radius:50%}
-.td{display:flex;justify-content:space-between;font-family:'DM Sans',sans-serif;font-size:.6rem;color:var(--td);margin-bottom:.8rem}
-.cc{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:.8rem}
-.bt{background:none;border:none;color:var(--td);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;padding:.6rem;-webkit-appearance:none;touch-action:manipulation}
-.bt:active{color:var(--tb);transform:scale(.92)}.bt svg{width:22px;height:22px;fill:currentColor}
-.bt.pp{width:56px;height:56px;border:2px solid var(--gd);border-radius:50%;color:var(--g)}
-.bt.pp:active{border-color:var(--g);background:rgba(196,162,101,.12);transform:scale(.95)}
-.bt.pp svg{width:24px;height:24px;margin-left:2px}.bt.pp.on svg{margin-left:0}
-.sr{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap}
-.st{display:flex;align-items:center;gap:.35rem;font-family:'DM Sans',sans-serif;font-size:.6rem;color:var(--td)}
-.st select{background:var(--sf2);border:1px solid rgba(196,162,101,.15);color:var(--t);font-family:'DM Sans',sans-serif;font-size:.65rem;padding:.35rem 1.2rem .35rem .5rem;border-radius:4px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237a7568' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .4rem center}
-.ov{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999}
-.ov.ld{background:var(--bg);transition:opacity .8s}.ov.ld.x{opacity:0;pointer-events:none}
-.ov.ld h2{font-weight:300;font-size:1.5rem;color:var(--g);letter-spacing:.12em;margin-bottom:.4rem}
-.ov.ld p{font-family:'DM Sans',sans-serif;font-size:.65rem;color:var(--td);letter-spacing:.12em}
-.lr{width:40px;height:2px;background:var(--sf2);margin:1.2rem 0;border-radius:1px;overflow:hidden}
-.lr div{width:30%;height:100%;background:var(--g);border-radius:1px;animation:ld 1.2s ease-in-out infinite}
-@keyframes ld{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
-.ov.vi{background:rgba(15,14,12,.96);z-index:998}.ov.vi.x{display:none}
-.ov.vi button{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.08em;padding:1rem 2.2rem;background:0;border:1px solid var(--g);color:var(--g);border-radius:3rem;cursor:pointer;-webkit-appearance:none;touch-action:manipulation}
-.ov.vi button:active{background:rgba(196,162,101,.12);transform:scale(.97)}
-.ov.vi p{font-family:'DM Sans',sans-serif;font-size:.6rem;color:var(--td);margin-top:.8rem;text-align:center;padding:0 2rem}
-.tt{position:fixed;top:1rem;left:50%;transform:translateX(-50%) translateY(-120%);font-family:'DM Sans',sans-serif;font-size:.65rem;background:var(--sf2);color:var(--g);padding:.5rem 1.2rem;border-radius:2rem;border:1px solid var(--gd);z-index:300;transition:transform .4s;white-space:nowrap}
-.tt.s{transform:translateX(-50%) translateY(0)}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:0}::-webkit-scrollbar-thumb{background:var(--sf2);border-radius:2px}
-@media(max-width:480px){.hdr h1{font-size:1.1rem}.ct{font-size:1.4rem}.tx{font-size:1rem}.cc{gap:.8rem}.bt.pp{width:50px;height:50px}.bt.pp svg{width:20px;height:20px}.cn{gap:.25rem}.cb{font-size:.58rem;padding:.4rem .65rem}.pb{padding:1.4rem 1rem calc(.8rem + var(--sab))}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="tt" id="toast"></div>
@@ -94,57 +37,6 @@ body{background:var(--bg);color:var(--t);font-family:'Cormorant Garamond',Georgi
 </div>
 </div></div>
 </div>
-<script>
-const IOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1),SAF=/^((?!chrome|android).)*safari/i.test(navigator.userAgent),MAX_U=IOS?180:SAF?250:800,S=window.speechSynthesis;let V=[],cCh=0,cP=0,playing=0,sQ=[],sI=0;
-const C=[];function ac(n,t,s,p){C.push({n,t,s,p})}
-ac(1,"The Two Currents","Chapter One",[]);
-ac(2,"The Loop — How the Pain Body Builds Its Prison","Chapter Two",[]);
-ac(3,"The Tiger — When the Fire Burns Clean","Chapter Three",[]);
-ac(4,"The Fog — When Stillness Becomes a Prison","Chapter Four",[""]);
-ac(5,"The Clearing — Where Presence Lives","Chapter Five",[]);
-ac(6,"The Compass — Learning to Read the Currents","Chapter Six",[]);
-ac(7,"The Error — Why the Wrong Medicine Makes You Sicker","Chapter Seven",[]);
-ac(8,"The Return — Living with the Map","Chapter Eight",["We have come a long way together. We mapped the Loop, the Tiger, the Fog, and the Clearing.","Now comes the part where you take the map and walk back into your life.","§","You wake up. In the first seconds of consciousness, there is a gap — a moment of awareness without content. This gap is the Clearing.","Take the reading before you reach for your phone. This takes less than a minute. It changes the trajectory of the day.","§","An email arrives with bad news. The current surges. Take the reading. If attention turns inward, one breath — the double inhale, the long exhale.","The difference between a reactive day and a responsive day is the presence of that two-second gap.","§","Over time, the body becomes more responsive. The Loop calms faster. The Fog lifts sooner.","The sea does not become calm. The sailor becomes skilled.","§","People ask: Are you always present? No. What has changed is not the weather. It is my relationship to the weather.","This knowing is somatic. It is the closest thing to freedom. Not freedom from the currents. Freedom within them.","§","The body is the bridge between the self and the present. It has a door — the breath.","One breath. Taken consciously. That noticing is a homecoming.","§","You are not the Loop. You are not the Tiger. You are not the Fog. You are not even the Clearing.","You are the awareness in which all of these appear. You are the ocean, not the wave.","The Clearing is where you already are. It has always been where you already are.","Welcome home."]);
-
-// === SENTENCE SPLITTING (iOS fix) ===
-function split(t){if(t.length<=MAX_U)return[t];const r=t.match(/[^.!?]+[.!?]+[\s]*/g)||[t],o=[];let b='';for(const s of r){if((b+s).length>MAX_U&&b){o.push(b.trim());b=s}else b+=s}if(b.trim())o.push(b.trim());return o}
-
-// === VOICE LOADING ===
-function lv(){V=S.getVoices();if(!V.length)return;const s=document.getElementById('vc');s.innerHTML='';const q=['Samantha','Karen','Daniel','Moira','Google US English','Google UK English Female','Microsoft Zira','Alex'];let e=V.filter(v=>v.lang.startsWith('en'));if(!e.length)e=V;e.sort((a,b)=>{let ai=q.findIndex(x=>a.name.includes(x)),bi=q.findIndex(x=>b.name.includes(x));if(ai<0)ai=999;if(bi<0)bi=999;return ai-bi});e.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name.replace(/Google |Microsoft |Apple /g,'').substring(0,24);s.appendChild(o)})}
-S.onvoiceschanged=lv;lv();let vp=0;const vpi=setInterval(()=>{lv();if(V.length||++vp>20)clearInterval(vpi)},250);
-
-// === RENDER ===
-function rCh(i){cCh=i;cP=0;sQ=[];sI=0;const c=C[i];document.getElementById('ct').textContent=c.t;document.getElementById('cs').textContent=c.s;const tx=document.getElementById('tx');tx.innerHTML='';c.p.forEach((p,j)=>{if(p==='§'){const d=document.createElement('div');d.className='sb';d.textContent='• • •';tx.appendChild(d)}else{const d=document.createElement('div');d.className='p';d.id='p'+j;d.textContent=p;d.onclick=()=>jmp(j);tx.appendChild(d)}});document.querySelectorAll('.cb').forEach((b,j)=>b.classList.toggle('on',j===i));uPr();window.scrollTo({top:0,behavior:'smooth'})}
-function rNav(){const n=document.getElementById('nav');C.forEach((c,i)=>{const b=document.createElement('button');b.className='cb';b.textContent=c.n;b.title=c.t;b.onclick=()=>{stp();rCh(i)};n.appendChild(b)})}
-function hl(i){document.querySelectorAll('.p').forEach(e=>{const pi=+e.id.replace('p','');e.classList.remove('sp','dn');if(pi===i)e.classList.add('sp');else if(pi<i)e.classList.add('dn')});const e=document.getElementById('p'+i);if(e)e.scrollIntoView({behavior:'smooth',block:'center'})}
-function uPr(){const c=C[cCh],sp=c.p.filter(x=>x!=='§');let si=0;for(let i=0;i<cP&&i<c.p.length;i++)if(c.p[i]!=='§')si++;document.getElementById('pf').style.width=(sp.length?(si/sp.length)*100:0)+'%';document.getElementById('cp').textContent=si+' / '+sp.length;document.getElementById('chp').textContent='Ch '+(cCh+1)+' / '+C.length}
-
-// === SPEECH ENGINE ===
-function gv(){const n=document.getElementById('vc').value;return V.find(v=>v.name===n)||V[0]||null}
-function spkS(ss,done){sQ=ss;sI=0;function nx(){if(!playing||sI>=sQ.length){if(done)done();return}const u=new SpeechSynthesisUtterance(sQ[sI]);const v=gv();if(v)u.voice=v;u.rate=+document.getElementById('spd').value;u.pitch=1;u.onend=()=>{sI++;if(playing)setTimeout(nx,IOS?80:50)};u.onerror=e=>{if(e.error==='canceled')return;sI++;if(playing)setTimeout(nx,200)};S.cancel();setTimeout(()=>S.speak(u),IOS?50:10)}nx()}
-function fns(f){const p=C[cCh].p;let i=f;while(i<p.length&&p[i]==='§')i++;return i}
-function fps(f){const p=C[cCh].p;let i=f;while(i>=0&&p[i]==='§')i--;return Math.max(0,i)}
-function spkP(i){const c=C[cCh];if(i>=c.p.length){if(cCh<C.length-1){rCh(cCh+1);setTimeout(()=>{if(playing)spkP(fns(0))},600)}else{stp();tst('Book complete')}return}if(c.p[i]==='§'){cP=fns(i+1);setTimeout(()=>{if(playing)spkP(cP)},700);return}cP=i;hl(i);uPr();spkS(split(c.p[i]),()=>{if(!playing)return;const ni=fns(i+1);cP=ni;setTimeout(()=>{if(playing)spkP(ni)},350)})}
-
-// === CONTROLS ===
-function ply(){playing=1;uBtn();spkP(fns(cP))}
-function stp(){playing=0;S.cancel();uBtn()}
-function tgl(){playing?stp():ply()}
-function jmp(i){stp();cP=i;hl(i);uPr();ply()}
-function uBtn(){const ic=document.getElementById('pli'),bt=document.getElementById('pl');if(playing){ic.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';bt.classList.add('on')}else{ic.innerHTML='<path d="M8 5v14l11-7z"/>';bt.classList.remove('on')}}
-function tst(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('s');setTimeout(()=>t.classList.remove('s'),2500)}
-
-document.getElementById('pl').onclick=tgl;
-document.getElementById('pp').onclick=()=>{stp();cP=fps(cP-1);hl(cP);uPr()};
-document.getElementById('np').onclick=()=>{stp();cP=fns(cP+1);hl(cP);uPr()};
-document.getElementById('pch').onclick=()=>{stp();if(cCh>0)rCh(cCh-1)};
-document.getElementById('nch').onclick=()=>{stp();if(cCh<C.length-1)rCh(cCh+1)};
-document.getElementById('pc').onclick=e=>{const r=e.currentTarget.getBoundingClientRect(),pct=(e.clientX-r.left)/r.width,c=C[cCh],sp=c.p.reduce((a,p,i)=>{if(p!=='§')a.push(i);return a},[]),ti=Math.floor(pct*sp.length);if(sp[ti]!=null){stp();cP=sp[ti];hl(cP);uPr()}};
-document.getElementById('vc').onchange=()=>{if(playing){S.cancel();spkP(cP)}};
-if(IOS||SAF)setInterval(()=>{if(S.speaking&&!S.paused)S.resume()},5000);
-
-document.getElementById('ib').onclick=()=>{const u=new SpeechSynthesisUtterance(' ');u.volume=.01;u.rate=2;S.speak(u);document.getElementById('vi').classList.add('x');tst('Audio ready')};
-window.onload=()=>{rNav();rCh(0);setTimeout(()=>{document.getElementById('ld').classList.add('x');setTimeout(()=>{document.getElementById('ld').style.display='none';document.getElementById('vi').classList.remove('x')},800)},1200)};
-</script>
+<script src="app.js"></script>
 </body>
 </html>

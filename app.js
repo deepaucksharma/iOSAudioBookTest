@@ -8,43 +8,88 @@ let V = [], cCh = 0, cP = 0, playing = 0, sQ = [], sI = 0;
 const C = [];
 
 // === CHAPTER TEXT FILE PARSER ===
-// Text file format:
-//   First line: "Chapter N: Title" (ignored, metadata comes from chapters.json)
-//   Blank lines separate paragraphs
-//   A line containing only "§" is a section break
+// Handles both plain-text format and Markdown-formatted chapter files:
+//   - Skips title lines: "Chapter N: ..." or "## CHAPTER N: ..."
+//   - "---" horizontal rules → section breaks (§)
+//   - "### Section Title" → section break + title as its own paragraph
+//   - Strips inline Markdown: **bold**, *italic*
+//   - Strips trailing "next chapter" teasers
+//   - Blank lines separate paragraphs
+//   - "§" on its own line is a section break
 function parseTxt(text) {
     const lines = text.split('\n');
     const paragraphs = [];
     let buf = '';
 
-    // Skip the first line (chapter title header) and any blank lines after it
+    function flush() {
+        if (buf.trim()) {
+            paragraphs.push(buf.trim());
+            buf = '';
+        }
+    }
+
+    function addBreak() {
+        flush();
+        // Avoid duplicate consecutive section breaks
+        if (paragraphs.length > 0 && paragraphs[paragraphs.length - 1] !== '§') {
+            paragraphs.push('§');
+        }
+    }
+
+    // Strip inline Markdown bold/italic markers from a string
+    function stripMd(s) {
+        return s.replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1');
+    }
+
+    // Skip title line(s) at the top
     let start = 0;
-    if (lines.length > 0 && lines[0].startsWith('Chapter ')) {
-        start = 1;
-        while (start < lines.length && lines[start].trim() === '') start++;
+    if (lines.length > 0) {
+        const first = lines[0].trim();
+        if (first.startsWith('## CHAPTER') || first.startsWith('## Chapter') || first.startsWith('Chapter ')) {
+            start = 1;
+            while (start < lines.length && lines[start].trim() === '') start++;
+        }
     }
 
     for (let i = start; i < lines.length; i++) {
-        const line = lines[i];
-        const trimmed = line.trim();
+        const trimmed = lines[i].trim();
 
-        if (trimmed === '§') {
-            if (buf.trim()) {
-                paragraphs.push(buf.trim());
-                buf = '';
-            }
-            paragraphs.push('§');
-        } else if (trimmed === '') {
-            if (buf.trim()) {
-                paragraphs.push(buf.trim());
-                buf = '';
-            }
-        } else {
-            if (buf) buf += ' ';
-            buf += trimmed;
+        // Section break: "§" or "---"
+        if (trimmed === '§' || trimmed === '---') {
+            addBreak();
+            continue;
         }
+
+        // Markdown H3 heading → section break + heading text as paragraph
+        if (trimmed.startsWith('### ')) {
+            addBreak();
+            const headingText = stripMd(trimmed.replace(/^###\s+/, ''));
+            if (headingText) paragraphs.push(headingText);
+            continue;
+        }
+
+        // Skip "next chapter" teasers (italic lines starting with *Chapter)
+        if (/^\*Chapter \d/.test(trimmed) || /^\*End of /.test(trimmed) || /^\*For guided audio/.test(trimmed)) {
+            continue;
+        }
+
+        // Blank line → flush current paragraph
+        if (trimmed === '') {
+            flush();
+            continue;
+        }
+
+        // Regular text line — strip Markdown and accumulate
+        const clean = stripMd(trimmed);
+        if (buf) buf += ' ';
+        buf += clean;
     }
-    if (buf.trim()) paragraphs.push(buf.trim());
+    flush();
+
+    // Remove trailing section break if present
+    while (paragraphs.length > 0 && paragraphs[paragraphs.length - 1] === '§') {
+        paragraphs.pop();
+    }
 
     return paragraphs;
 }
